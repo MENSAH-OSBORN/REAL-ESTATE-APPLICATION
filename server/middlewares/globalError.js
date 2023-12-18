@@ -31,5 +31,5 @@ const handleProductionError = (error, req, res) => {
 //handling invalid database field input
 const handleCastError = (error) => {
   const message = `${error.value} is not a valid ${error.path}`;
-  throw new AppError();
+  throw new AppError(message, 401);
 };
