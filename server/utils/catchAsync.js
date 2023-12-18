@@ -1,7 +1,7 @@
-exports.catchAsync = (fn) => {
-  return (req, res, next) => {
+module.exports = (fn) => {
+  return async (req, res, next) => {
     try {
-      fn(req, res, next);
+      await fn(req, res, next);
     } catch (error) {
       next(error);
     }
