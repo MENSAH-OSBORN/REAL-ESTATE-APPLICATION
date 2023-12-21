@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  background-color: rgb(241, 235, 235);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Adjust the gap as needed */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 3%;
+  margin-left: 3%;
+  width: 94%;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 20px;
+}
+
+img {
+  max-width: 100%; /* Set the image size to 70% of its container */
+  height: auto;
+}
+
+.item {
+  background-color: whitesmoke;
+}
+
+.bars {
+  display: flex;
+}
+
+.navbar {
+  color: rgb(10, 26, 72);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 70%;
+}
+
+.settings {
+  width: 30%;
+}
+
+nav {
+  background: #14f5e2;
+  color: rgb(29, 29, 84);
+}
+
+hr {
+  padding-top: 40px;
+  color: aqua;
+}
+
+.each {
+  line-height: 50px;
+}
+
+.last {
+  color: rgba(28, 38, 68, 0.493);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 70px;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.title {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  width: 70%;
+}
+
+.types {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dashboard {
+  background-image: url("./images/shutterstock_250676278.housing.market.real.estate.crash.mortgage.cropped-5bfc315b4cedfd0026c226cd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 20px;
+  padding-right: 3%;
+  padding-left: 3%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 45%;
+  height: 70vh;
+}
+
+.display-description {
+}
+
+.display-view {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
+  gap: 10%;
+}
+
+.display-images {
+  width: 100%;
+}
+.display-side-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5%;
+}
+
+.display-main-images {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 0.24%;
+}
+
+.main1 {
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+
+.agent-main {
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 50%;
+}
