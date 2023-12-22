@@ -6,6 +6,8 @@ exports.globalError = (error, req, res, next) => {
   if (process.env.NODE_ENV === "development") {
     handleDevelopmentError(error, req, res);
   } else if (process.env.NODE_ENV === "production") {
+    if (error.name === "CastError") error = handleCastError(error);
+    if (error.code === 11000) error = handleDuplicateFieldsError(error);
     handleProductionError(error, req, res);
   }
 };
@@ -31,5 +33,11 @@ const handleProductionError = (error, req, res) => {
 //handling invalid database field input
 const handleCastError = (error) => {
   const message = `${error.value} is not a valid ${error.path}`;
-  throw new AppError();
+  return new AppError(message, 401);
+};
+
+const handleDuplicateFieldsError = (error) => {
+  const value = error.message.match(/(["'])(\\?.)*?\1/)[0];
+  const message = `${value} already exists. Please use another value!`;
+  return new AppError(message, 400);
 };
