@@ -1,42 +1,227 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  background-color: rgb(241, 235, 235);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Adjust the gap as needed */
+  margin-top: 100px;
+  margin-bottom: 20px;
+  margin-right: 3%;
+  margin-left: 3%;
+  width: 94%;
+}
+.latest {
+  margin-top: 15%;
+  margin-right: 3%;
+  margin-left: 3%;
+  color: goldenrod;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 20px;
+}
+
+img {
+  max-width: 100%; /* Set the image size to 70% of its container */
+  height: auto;
+}
+
+.item {
+  background-color: whitesmoke;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.item:hover {
+  transform: scale(1.05); /* Adjust the scale factor as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow on hover */
+}
+
+.bars {
+  display: flex;
+}
+
+.navbar {
+  color: rgb(10, 26, 72);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 70%;
+}
+
+.settings {
+  width: 30%;
+}
+
+nav {
+  background: #14f5e2;
+  color: rgb(29, 29, 84);
+}
+
+hr {
+  padding-top: 40px;
+  color: aqua;
+}
+
+.each {
+  line-height: 50px;
+}
+
+.last {
+  color: rgba(28, 38, 68, 0.493);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 70px;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.types {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10%;
+}
+
+.options button {
+  width: 100%; /* Set your desired width */
+  height: 35px; /* Set your desired height */
+  padding: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px; /* Set half of the height for a circular shape */
+  cursor: pointer;
+}
+
+.JAMES {
+  color: goldenrod;
+}
+
+.display-view {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
+  gap: 5%;
+}
+
+.display-description {
+  margin-top: 5%;
+}
+
+.display-images {
+  width: 100%;
+}
+.display-side-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5%;
+}
+
+.display-main-images {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 0.24%;
+}
+
+.main1 {
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+
+.agent-main {
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 2%;
+  width: 50%;
+}
+
+.types {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+  padding-top: 10px;
+  gap: 5px;
+}
+
+.TITLE {
+  color: goldenrod;
+}
+
+.dashboard {
+  position: relative; /* Add position relative for video positioning */
+  margin: 0%;
+}
+
+.title {
+  background-color: aliceblue;
+  margin: 0px;
+  padding-right: 3%;
+  padding-left: 3%;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+}
+
+.background-video {
+  position: absolute; /* Position the video */
+  top: 0;
+  left: 0;
+
+  height: 123vh;
+  width: 100%;
+  z-index: -1; /* Set z-index to be behind other content */
+}
+
+.headline h1 {
+  color: goldenrod; /* Set headline color */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.centered-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 100% of the viewport height */
+}
+
+.headline h1 {
+  color: goldenrod;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.agent-side {
+  margin-top: 20%;
 }
