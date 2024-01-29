@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const AppError = require("../utils/AppError");
 
-const propertySchema = mongoose.schema({
+const propertySchema = mongoose.Schema({
   name: {
     type: String,
     required: [true, "A property name must be provided"],
@@ -74,7 +74,8 @@ const propertySchema = mongoose.schema({
   ],
 });
 
-propertySchema.index({ price: 1 });
+propertySchema.index({ name: 1, startLocation: 1 }, { unique: true });
+propertySchema.index({ name: 1, price: 1 });
 propertySchema.index({ startLocation: "2dsphere" });
 
 //middlewares
@@ -82,7 +83,7 @@ propertySchema.index({ startLocation: "2dsphere" });
 propertySchema.pre(/^find/, function (next) {
   this.populate({
     path: "agent",
-    select: "-__v -passwordChangedAt ",
+    select: "-__v -passwordChangedAt -role",
   });
 
   next();
