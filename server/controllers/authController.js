@@ -98,13 +98,13 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
 //guard routes
 exports.protect = catchAsync(async (req, res, next) => {
-  const token = req.cookies.jwt || req.headers.authorization.split(" ")[1];
+  const token = req.cookies?.jwt || req.headers.authorization.split(" ")[1];
 
   if (!token) throw new AppError("You are not logged in!", 401);
 
   const decodedToken = await jwt.verify(token, process.env.JWT_SECRET);
 
-  const user = User.findById(decodedToken.id);
+  const user = await User.findById(decodedToken.id);
   if (!user) throw new AppError("The user with this token does not exist", 401);
 
   //verifying if password was not changed after sending token
